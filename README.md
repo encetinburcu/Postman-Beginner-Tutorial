@@ -1,0 +1,218 @@
+# Postman-Beginner-Tutorial
+This is your first repository
+
+POSTMAN
+1.Postman Nedir?
+Postman, uzun kodlara ihtiyaç duymadan API’leri geliştirmek, paylaşmak, test etmek, dokümante etmek için kullanılan bir araçtır.
+Postman tamamen API(Uygulama Programlama Arayüzü) ile ilgilidir. API’leri oluşturabilir, API lerin manual ve otomasyon testlerini yapabiliriz.
+1.1.API Nedir?
+API(Uygulama Programlama Arayüzü) en kısa haliyle database ile uygulamalar arasında bir arayüzdür. 
+2.Postman Kurulumu
+Postman yükleme işlemi için öncelikle üye olunup daha sonra aşağıda ekran görüntüsü verilen https://www.postman.com/downloads/ linkinden dosyayı indirmeliyiz. İndirmenin ardından .exe uzantılı setup dosyasına basılarak kurulum yapılacaktır.
+![Postman Kurulum Resmi](img/1.jpg)
+
+
+2.Postman Arayüzü
+ 
+Postman arayüzü 3 bölümden oluşmaktadır. Bunlar header bar, sidebar ve builder’dır. Bu bölümleri tek tek inceleyecek olursak;
+2.1.Sidebar
+ 
+2.1.1.Collections Sekmesi: Collections sekmesi altında collection lar oluşturup bunlarla birçok işlem gerçekleştirebiliriz. Mesela; silme, düzenleme, paylaşma vb. Ek olarak oluşturduğumuz bu collection ların altına API’ler ekleyebiliriz.
+2.1.2.History Sekmesi: Göndermiş olduğumuz bütün istekleri(request) burdan yönetebiliriz. 
+
+2.2.Header Bar
+ 
+2.2.1.New Butonu: New butonu ile requsts(istekler), collections, environments, documentation(dokümantasyon), mock servers(sahte sunucular) ve monitors(monitörler) oluşturulabilir.
+ 
+2.2.2.İmport: Collection lar, environment ler direkt veya link kullanılarak içe aktarılabilir. 
+ 
+2.2.3.Runner: Collection ları veya bunların altında oluşturulan API’leri ardarda çalıştırabilmemizi sağlar.
+2.2.4. Workspaces: Kişisel veya takım olarak workspace ler oluşturmamızı sağlar. Workspaceler koleksiyonlarınızı gruplayabileceğiniz, düzenleyebileceğiniz ve yönetebileceğiniz bir alandır.
+
+
+
+
+4.İlk API İsteği Nasıl Oluşturulur?
+
+ 
+
+API testi için ilk olarak yeni bir Workspace tanımlamamız gerekmektedir.
+Daha önce workspace oluşturmaktan bahsetmiştik. Workspace lerimizi takım veya kişisel olarak oluşturabiliriz. Biz denemelerimizi kişisel şekilde oluşturduğumuz workspace üzerinden yapacağız.
+Yukarıdaki ekran görüntüsünde de görülebileceği Name ve Type alanları doldurularak workspace i oluşturuyoruz. 
+
+ 
+Workspace i oluşturduktan sonra New  butonundan yeni request ekliyoruz. Request butonuna basıldıktan sonra aşağıda ekran görüntüsü  verilen ekran karşımıza çıkacaktır.
+ 	
+Save Request sayfasında yer alan Request Name alanında isim girilir. Kaydetme işleminin yapılabilmesi için ayrıca Create Collection butonundan workspace imiz için yeni bir collection oluşturuyoruz ve kaydediyoruz.
+Request olarak https://reqres.in/ adresinde yer alan örnek API’lerden kullanabiliriz.
+Biz bu aşamada https://reqres.in/api/users/2 api’sini kullanacağız.
+ 
+Yukarıdaki ekran görüntüsünde 1 ile gösterilen kutucuğa request url’i yazılır.
+Ardından 2 numara ile işaretlenen Send butonuna basılarak request çağrılır.
+3 numaralı alanda da çağırdığımız request’e geri dönen response içeriği bulunur. 
+Solda sidebar bölümünde history sekmesinde ise bugün çağırdığımız request bulunur.
+
+5. Postman Collection Yapısı – Oluşturma ve Yönetme
+Postman’in collection yapısı API requestlerini ve öğelerimizi düzenli tutmamızı kolaylaştırır. Yani API isteklerini mantıksal bir düzende kaydetmek için kullanılır.
+Aşağıdaki ekran görüntüsünde görüldüğü üzere New Collection butonuna tıkladığımızda yeni bir Collection tanımlamak için aşağıdaki sayfa açılacaktır. Açılan bu Collection tanımlama sayfasında yer alan Authorization bölümünde Type olarak No Auth seçtik. Basic Auth seçtiğimiz takdirde tüm requestler tarafından kullanılabilecek Usernaname ve Password kimlik doğrulama bilgileri girilir. 
+Bunun haricinde Pre-request Scripts alanı ön istek komut dosyaları için, Tests alanı bazı ortak testlerin olması durumunda, Variables alanı ise yapacak olduğumuz tüm requestler için ortak değişkenler olması durumunda kullanılabilir. 
+ 
+
+
+Yukarıdaki ekran görüntülerinde görülebileceği gibi oluşturduğumuz Collection’a klasör ekleyerek requestleri GET ve POST metodu olarak grupladık.
+Ayrıca Collection içerisinde yer alan API Requestlerini Run butonuna basarak çalıştırabiliriz.
+Run butonuna bastığımızda Collection Runner sayfası açılacaktır.
+ 
+Açılan Collection Runner sayfasında Choose a collection folder alanında Workspace’de tanımladığımız Collection ve Collection’lar içerisinde tanımladığımız klasör listelerine ulaşılabilir. Çalıştırılacak olan Collection ve klasör bu kısımdan seçilecektir.
+Seçilen istekler yan taraftaki Run Order alanında litelenir.
+Iterations alanı yineleme sayısını belirtir. Burada çalıştırılacak Collection veya klasörün kaç kez çalıştırılacağını seçebiliriz. 
+Delay ise requestler için gecikme süresinin tanımlandığı alandır. 
+En altta bulunan Run butonuna basılarak requestler çalıştırılır.
+ 
+Yapmış olduğumuz test tamamlandıktan sonra sonuç sayfası açılır. Çalıştırdığımız Collection’a ait test sonuçları bu sayfada yer alır. Sayfayı inceleyecek olursak;
+Iterasyon sayısını 2 olarak belirlediğimizden testimiz 2 kez çalışmıştır ve her çalışma sonucu da başarılı olarak listelenmiştir.
+Yeşil ile işaretli alanlar başarılı olan testleri belirtir. Yandaki yeşil ve kırmızı butonlardan yapmış olduğumuz testi başarılı veya başarısız olarak filtreleyebiliriz.
+Export Result butonuna basarak test sonuçlarını dışa aktarabiliriz.
+Retry butonuna basarak ise testi tekrar çalıştırabiliriz.
+
+6.Variables
+Değişkenler Postman’da farklı değerler alabilen herhangi bir öğe veya veri deposu olabilir. Diğer programlama dillerinde olduğu gibi Postman’da da aynıdır. 
+Farklı değerler alabilirler ve bu değerlere daha sonra başvurulabilir, yeniden kullanılabilir.
+Değişkenleri kullanmak tekrardan kaçınmamıza yardımcı olur.
+ 
+Örnek API için kullandığımız https://reqres.in/ sayfasını ‘url’ adı altında değişken olarak tanımladık.
+ 
+Daha sonra request url’ini yazdığımız kısımda https://reqres.in/ yerine {{url}} yazarsak sayfa otomatik olarak çağrılmış olacaktır.
+ 
+
+
+Tests kısmına bazı test scriptleri yazdık. Burada re-request script içerisine yazılan kodlar istek gönderilmeden önce çalıştırılır ve testler daha sonra yürütülür. 
+
+
+ 
+
+
+
+Tests ve pre-request script alanlarına ayzılan scriptleri Postman Console ekranından response’larını görebiliriz.
+ 
+ 
+ 
+7.Environment
+Environment, ortam değişkenleri oluşturabildiğimiz ve bu değişkenleri sakladığımız alandır. 
+ 
+Bu kısım Environment’ta değişken tanımlayamaya baktığımız kısımdır. İlk olarak https://reqres.in/ linkinden yardımla bir request oluşturduk. Ve body kısmında bunu tanımladık. 
+ 
+Header kısmından içerik türü json olarak seçilmelidir. Aksi takdirde “missing email or username” şeklinde bir hata verecektir.
+
+ 
+Environment altında oluşturduğumuz değişkenleri farklı request ve collectionl’larda çağırabiliriz. Bu değişkenleri pre-request Script veya tests alanlarında get veya set edebiliriz.
+Postman’da sağ köşede bulunan Manage Envronment butonuna tıklayarak değerlerimizi bir değişkene atadık ve body kısmında artık bu değişkenlerle requesti çağırdık.
+ 
+Environment’ta oluşturduğumuz değişkenleri burada çağırdığımızda test tamamlandı ve yanda response değerleri yazıldı.
+Bu sonuç bize değişkenlerin doğru bir şekilde oluşturulup yönlendirildiğini gösterir.
+8. Hızlı Komut Dosyaları Nasıl Oluşturulur?
+Postman’da birden çok yerde komut dosyaları oluşturulabilir. Tanımladığımız Collection içerisinde, Collection içerisine tanımlanan klasörlerin içerisinde veya oluşturduğumuz requestlerin içerisinde komut dosyaları tanımlanıp çalıştırılabilir. 
+Pre-request script içerisine yazılan kodlar istek gönderilmeden önce çalıştırılır ve testler daha sonra yürütülür.
+
+ 
+Yukarıdaki ekran görüntüsünde görülen işlem Tests kısmında hazır komutlar ile test gerçekleştirme işlemidir. Ynda bulunan hazır kodlardan ihtiyaç duyulan alıştırılır. 
+Ve Tests Results kısmında test sonuçları incelenebilir.
+Biz yukarıda iki hazır script kullandık.
+Response time 200 ms den fazla olduğu için ilk script başarısız oldu.
+Durum kodu 200 olduğu için ikinci script başarılı oldu.
+
+9.Komut satırı İle Nasıl Çalıştırılır?
+Bu kısım komut satırı ile Postman’ın nasıl çalıştırılacağıdır.
+Bunun için Newman entegrasyonu yapmamız gerekecektir.
+Bu aşamada öğrenmemiz gereken ilk şey Newman’dır.
+Newman, Postman collection’larımızı Collection Runner üzerinden değil de direct komut satırı üzerinden çalıştırmamızı ve test etmemizi sağlayan bir NPM(Node Package Manager) teknolojisidir. Npm javascript betik dili için geliştirilmiş olan ve Node.js’in standart olarak kabul ettiği bir paket yönetim sistemidir. Npm komut satırından çalıştırılır. Newman bir node.js programıdır.
+ 
+Komut satırımızı açtığımızda bilgisayarımızda node.js kurulu olup olmadığına baktık ve kurulu olmadığını gördük. Postman Collection’ları Newman ile komut satırından çalıştırabilmemiz için önce bilgisayarımıza node.js indirmemiz ve kurmamız gerekir. https://nodejs.org/en/download/ linkinden node.js i indirip kurduktan sonra komut satırından tekrar kontrol ettiğimizde aşağıdaki ekran görüntüsünde olduğu gibi kurulmuş olduğunu görebiliriz.
+ 
+ 
+Node.js’i yükledikten sonra “npm install –g newman” komutu ile Newman’ı kurabiliriz.
+Artık entegrasyon işlemi tamamlanmış oldu. Bundan sonraki aşamada Postman Collection’ımızı dışarı export ediyoruz ve .json uzantılı bir soya olarak kaydediyoruz. Komut satırından “newman run Collection1.json” dosyasını çalıştırarak collection!ı test ediyoruz. Daha önce Collection Runner’da olan işlemlerin aynısı komut satırımıza da yazılacaktır.
+ 
+Ayrıca “newman ruh –h” komutunu çalıştırırsak newman ile kullanabileceğimiz tüm seçenekler karşımıza çıkacaktır.
+10.JENKINS
+Postman Collection’ları Jenkins ile de çalıştırılabilir.
+Jenkins, sürekli entegrasyonyöntemi için kullanılan java ile yazılmış açık kaynak kodlu bir otomasyon sunucusudur. Jenkins, belirli bir sunucuda ve portta çalışır, belirlenen kaynaktan projeye ulaşır ve istenen işlemleri gerçekleştirir.
+Jenkins, https://www.jenkins.io/download/ linkinden indirilir ve kurulur. Kurulum tamamlandıktan sonar karşımıza aşağıdaki ekran görüntüsünde verilen ekran çıkacaktır.
+ 
+Jenkins’in kilidini açmak için kırmızı renk ile verilen klasöre gidilip “initialAdminPassword” adlı dosyanın içinde bulunan şifrenin aşağıdaki alana kopyalanması gerkir. Ardından continue ile devam edilir. Kurulum tamamlanınca karşımıza Jenkins’in anasayfası çıkacaktır. 
+ 
+Yeni Item butonuna tıklanarak bir proje oluşturulur ve açılan sayfadan ‘Windows bash komutu çalıştır’ yapılandırması eklenerek karşımıza çıkan command bölümüne daha önce newman’ı çalıştırırken aşağıda kullandığımız komutlar yazılır.
+ 
+Komutlar kaydedilip çalıştırılırsa daha önce Collection Runner ekranında görüntülediğimiz test sonuçlarının aynısını görüntüleyebiliriz.
+
+11.CSV, JSON dosyasından nasıl veri alınır?
+
+Aşağıdaki ekran görüntsünde görülen request’imizi Data1.csv adlı bir csv dosyası içerisine kaydettik. Aytıca bir kayıt da kendimiz oluşturduk. 
+ 
+ 
+ 
+ 
+Yukarıda yapılan işlemlerden daha önceki kısımlarda bahsetmiştik. Bu aşamada Collection Runner’ı açtığımzda Collection1’in içine tanımladığımız POST klasöründeki requesti seçiyoruz ve aşağıda Select File yazan yerden Data1.csv dosyamızı seçip run’lıyoruz.
+ 
+Testimiz tamamlandıktan sonra Run Results sayfasındaki çıktıları inceleyelim.
+
+
+
+İki farklı kaydığımızolduğu için Iterasyon sayımız 2 olarak belirledik. Iterasyon1’de yukarıda görülebildiği gibi hazır aldığımız kayıt, Iterasyon’de ise bizim eklediğimiz kayıt başarılı bir şekilde görülmektedir.
+
+Aynı işlemleri bir de .json uzantılı Data2.json dosyası için de yaptık ve testimiz yine başarılı olarak sonuçlandı.
+
+
+
+
+
+
+
+
+
+
+Aşağıdaki görmüş olduğumuz test scriptleri  de .json uzantılı dosyadan getirdiğimiz değerlerin response ile aynı olduğunu doğrulamak için yazılır. 
+ 
+Collection Runner’da testi tamamladıktan sonra Run Results ekranımız aşağıdaki gibi başarılı şekilde çalıştığını doğrulayacaktır.
+ 
+
+
+
+12. URL ile Çalıştırma
+
+ 
+Oluşturduğumuz Collection’un yanındaki ok işaretine basıp Share butonuna tıkladığımızda yukarıda gördüğümüz sayfa açılacaktır. Bu sayfadan görmüş olduğumuz Collection url’ini kopyaladığımızda ve bunu komut satırındaaşağıdaki şekilde çalıştırdığımızda Collection Runner sayfasında bulunan test sonuçlarımızı komut satırında görüntüleyebiliriz.
+ 
+
+13.SOAP Request’leri Nasıl Çalıştırılır ?
+
+Bu kısımda Postman’a SOAP isteği yollayacağız. 
+İlk olarak kullandığımız SOAP API: http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL
+Postman arayüzünde bir POST isteği oluşturup, isteğin gideceği adrese  http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL url’ini girelim. 
+Altta görmüş olduğumuz ekranda Body sekmesinde raw seçeneğini seçip XML tiinde bir request body göndereceğimizi belirttik. Daha sonra XML formatındaki ülke başkentlerini bulan SOAP isteğini yolladığımızda TR(Türkiye) için doğru response değerini elde ettik. 
+ 
+14. API Response’undan Veri Alma
+
+ 
+Öncelikle Environment’ı oluşturduk ve değişkenlere değer ataması yaptık.
+ 
+PUT metoduyla gönderilen request’te encironment’ta tanımladığımız değişkeni kullanınca yukarıda ekran görüntüsünde görülebileceği gibi response olarak tanımladığımız değişken değeri döndü. Bu kısımlardan daha önceden bahsetmiştik.
+ 
+Body’i JSON formatında tanımlayıp response olarak dönen değerlerden indisi 1 olanı ekrana yazdırdık. 
+
+ 
+Environment’ta oluşturduğumuz değişkenimize response’un 1. İndisindeki veriyi setledik. (Yukarıda Lindsay olarak bulmuştuk)
+ 
+Environment’a tekrar baktığımızda başlangıç değeri olarak bizim atadığımız değerin görüldüğünü, mevcut değer olarak ise API’nin response’undan gelen değeri setlemiş olduk.
+15.Postman Authorization(Yetkilendirme)
+Daha önce Postman Arayüzü’nü incelerken Authorization sekmesinden bahsetmiştik. 
+Şimdi bunu ne zaman kullanabileceğimizi göreceğiz.
+Bu örnek için github API’sini kullanacağız.
+Kullandığımız API github’ın kimliği doğrulanmış kullancı için depo oluşturmak için API’si. 
+https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user linkinden aldığımız request Url’i POST metodu ile gönderip ve body kısmına aynı linkten aldığımız örneği koyabiliriz.
+ 
+Yukarıdaki ekran alıntısından da görülebileceği gibi kimlik doğrulaması yapmadığımız için “401 Unauthorized” hatasını almış dolduk. 
+ 
+Kendi github’ımızdan elde edebileceğimiz token’ı Authorization kısmında tanımlayıp yetki vermiş olduk. 
+ 
+Az önce hata aldığımız işlemi tekrarlarsak bu sefer yetkilendirme yaptığımız için başarılı olduğumuzu ve “Postman Beginner Tutorial” adında github’ta repository oluşmuş olacağını göreceğiz. 
