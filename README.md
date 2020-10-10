@@ -1,18 +1,23 @@
 # Postman-Beginner-Tutorial
 This is your first repository
 
-POSTMAN
-1.Postman Nedir?
+#POSTMAN
+
+##1.Postman Nedir?
+
 Postman, uzun kodlara ihtiyaç duymadan API’leri geliştirmek, paylaşmak, test etmek, dokümante etmek için kullanılan bir araçtır.
 Postman tamamen API(Uygulama Programlama Arayüzü) ile ilgilidir. API’leri oluşturabilir, API lerin manual ve otomasyon testlerini yapabiliriz.
-1.1.API Nedir?
+
+###1.1.API Nedir?
+
 API(Uygulama Programlama Arayüzü) en kısa haliyle database ile uygulamalar arasında bir arayüzdür. 
-2.Postman Kurulumu
+
+###1.2.Postman Kurulumu
 Postman yükleme işlemi için öncelikle üye olunup daha sonra aşağıda ekran görüntüsü verilen https://www.postman.com/downloads/ linkinden dosyayı indirmeliyiz. İndirmenin ardından .exe uzantılı setup dosyasına basılarak kurulum yapılacaktır.
 ![Postman Kurulum Resmi](img/1.jpg)
 
 
-2.Postman Arayüzü
+##2.Postman Arayüzü
  
 Postman arayüzü 3 bölümden oluşmaktadır. Bunlar header bar, sidebar ve builder’dır. Bu bölümleri tek tek inceleyecek olursak;
 2.1.Sidebar
