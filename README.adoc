@@ -1,7 +1,7 @@
 # Postman-Beginner-Tutorial
 This is your first repository
 
-#POSTMAN
+*POSTMAN
 
 ##1.Postman Nedir?
 
